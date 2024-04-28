@@ -300,7 +300,7 @@ require('lazy').setup({
     'nvim-tree/nvim-tree.lua',
     event = 'VimEnter',
     config = function()
-      require('nvim-tree').setup()
+      require('nvim-tree').setup { view = { side = 'right', width = 60 } }
       vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
       vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
     end,
