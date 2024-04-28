@@ -296,6 +296,16 @@ require('lazy').setup({
     end,
   },
 
+  { -- View file tree of project
+    'nvim-tree/nvim-tree.lua',
+    event = 'VimEnter',
+    config = function()
+      require('nvim-tree').setup()
+      vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
+      vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
+    end,
+  },
+
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything
