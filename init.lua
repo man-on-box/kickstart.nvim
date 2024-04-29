@@ -306,6 +306,25 @@ require('lazy').setup({
     end,
   },
 
+  { -- Setup Github Copilot
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function()
+      require('copilot').setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      }
+    end,
+  },
+
+  {
+    'zbirenbaum/copilot-cmp',
+    config = function()
+      require('copilot_cmp').setup()
+    end,
+  },
+
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything
@@ -775,6 +794,7 @@ require('lazy').setup({
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
+          { name = 'copilot', group_index = 2 },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
