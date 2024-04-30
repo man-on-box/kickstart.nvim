@@ -304,8 +304,8 @@ require('lazy').setup({
     'nvim-tree/nvim-tree.lua',
     event = 'VimEnter',
     config = function()
-      require('nvim-tree').setup { view = { side = 'right', width = 60 } }
-      vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
+      require('nvim-tree').setup { view = { side = 'right', width = 60 }, renderer = { highlight_opened_files = 'name' } }
+      vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeFindFileToggle<CR>', { desc = 'Nvimtree Toggle window' })
       vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
     end,
   },
@@ -763,6 +763,7 @@ require('lazy').setup({
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
