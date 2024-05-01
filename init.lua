@@ -300,34 +300,15 @@ require('lazy').setup({
     end,
   },
 
-  { -- View file tree of project
-    'nvim-tree/nvim-tree.lua',
-    event = 'VimEnter',
-    config = function()
-      require('nvim-tree').setup { view = { side = 'right', width = 60 }, renderer = { highlight_opened_files = 'name' } }
-      vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeFindFileToggle<CR>', { desc = 'Nvimtree Toggle window' })
-      vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
-    end,
-  },
-
-  { -- Setup Github Copilot
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    config = function()
-      require('copilot').setup {
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      }
-    end,
-  },
-
-  {
-    'zbirenbaum/copilot-cmp',
-    config = function()
-      require('copilot_cmp').setup()
-    end,
-  },
+  -- { -- View file tree of project
+  --   'nvim-tree/nvim-tree.lua',
+  --   event = 'VimEnter',
+  --   config = function()
+  --     require('nvim-tree').setup { view = { side = 'right', width = 60 }, renderer = { highlight_opened_files = 'name' } }
+  --     vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeFindFileToggle<CR>', { desc = 'Nvimtree Toggle window' })
+  --     vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
+  --   end,
+  -- },
 
   -- NOTE: Plugins can specify dependencies.
   --
@@ -383,7 +364,6 @@ require('lazy').setup({
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
-        -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         -- defaults = {
@@ -920,7 +900,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
