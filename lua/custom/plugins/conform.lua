@@ -28,6 +28,7 @@ return { -- Autoformat
       typescriptreact = { { 'prettierd', 'prettier' } },
       javascript = { { 'prettierd', 'prettier' } },
       javascriptreact = { { 'prettierd', 'prettier' } },
+      astro = { { 'prettier' } },
       lua = { 'stylua' },
       css = { { 'prettierd', 'prettier' } },
       html = { { 'prettierd', 'prettier' } },

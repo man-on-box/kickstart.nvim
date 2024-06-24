@@ -85,6 +85,11 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-go').setup()
+    local dapGo = require 'dap-go'
+    dapGo.setup()
+
+    vim.keymap.set('n', '<leader>p', function()
+      dapGo.debug_test()
+    end, { desc = 'Debug: Debug closest test' })
   end,
 }

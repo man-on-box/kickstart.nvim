@@ -744,10 +744,10 @@ require('lazy').setup({
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
+          { name = 'path' },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'copilot' },
-          { name = 'path' },
         },
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
@@ -858,7 +858,7 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
